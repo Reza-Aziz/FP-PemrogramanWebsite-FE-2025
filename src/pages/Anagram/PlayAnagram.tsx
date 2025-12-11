@@ -29,7 +29,6 @@ import {
 } from "@/components/ui/alert-dialog";
 import { useAuthStore } from "@/store/useAuthStore";
 
-const API_BASE_URL = import.meta.env.VITE_API_URL || "http://localhost:4000";
 const TOTAL_QUESTIONS_PLACEHOLDER = 15;
 
 interface BackendQuestion {
@@ -143,7 +142,7 @@ const PlayAnagram = () => {
       setError(null);
       try {
         const response = await fetch(
-          `${API_BASE_URL}/api/game/game-type/anagram/${id}/play/public`,
+          `${import.meta.env.VITE_API_URL}/api/game/game-type/anagram/${id}/play/public`,
           {
             method: "GET",
             headers: {
@@ -649,7 +648,7 @@ const PlayAnagram = () => {
 
     // POST request to increment play count
     try {
-      await fetch(`${API_BASE_URL}/api/game/play-count`, {
+      await fetch(`${import.meta.env.VITE_API_URL}/api/game/play-count`, {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
@@ -858,7 +857,7 @@ const PlayAnagram = () => {
         {/* Gambar Hint */}
         <div className="w-full h-64 bg-white rounded-2xl mb-8 flex items-center justify-center shadow-lg overflow-hidden">
           <img
-            src={`${API_BASE_URL}/${currentQuestion.image_url}`}
+            src={`${import.meta.env.VITE_API_URL}/${currentQuestion.image_url}`}
             alt="Question Hint"
             onError={(e) => {
               console.error("Image failed to load:", currentQuestion.image_url);
