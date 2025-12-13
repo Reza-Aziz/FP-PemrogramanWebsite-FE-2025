@@ -16,7 +16,7 @@ import ProtectedRoute from "./routes/ProtectedRoutes";
 import CreateAnagram from "./pages/Anagram/CreateAnagram";
 import PlayAnagram from "./pages/Anagram/PlayAnagram";
 import EditAnagram from "./pages/Anagram/EditAnagram";
-import Unjumble from "./pages/unjumble/gameUnjumble";
+import PlayUnjumble from "./pages/unjumble/PlayUnjumble";
 import CreateUnjumble from "./pages/unjumble/CreateUnjumble";
 import EditUnjumble from "./pages/unjumble/EditUnjumble";
 
@@ -35,7 +35,7 @@ function App() {
         <Route path="/login" element={<Login />} />
         <Route path="/sandbox" element={<Sandbox />} />
         <Route path="/quiz/play/:id" element={<Quiz />} />
-        <Route path="/unjumble/play/:id" element={<Unjumble />} />
+        <Route path="/unjumble/play/:id" element={<PlayUnjumble />} />
         <Route path="/speed-sorting/play/:id" element={<SpeedSorting />} />
         <Route path="/anagram/play/:id" element={<PlayAnagram />} />
         <Route

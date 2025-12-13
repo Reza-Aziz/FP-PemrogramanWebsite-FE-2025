@@ -246,7 +246,7 @@ export default function PlayUnjumble() {
       <header className="flex justify-between items-center p-4 bg-white shadow-md rounded-lg mb-6">
         <div>
           <h1 className="text-3xl font-extrabold text-indigo-700 flex items-center gap-3">
-            <span>🧩</span>
+            <span>🧩Unjumble </span>
             <span>{game.name}</span>
           </h1>
           <p className="text-sm text-indigo-600 mt-1 italic">
