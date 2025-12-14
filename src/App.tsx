@@ -22,6 +22,9 @@ import EditUnjumble from "./pages/unjumble/EditUnjumble";
 import MazeChase from "./pages/maze-chase/MazeChase";
 import CreateMazeChase from "./pages/maze-chase/CreateMazeChase";
 import EditMazeChase from "./pages/maze-chase/EditMazeChase";
+import CreateTypeSpeed from "./pages/type-speed/CreateTypeSpeed";
+import EditTypeSpeed from "./pages/type-speed/EditTypeSpeed";
+import TypeSpeed from "./pages/type-speed/TypeSpeed";
 
 import OpenTheBoxGame from "./pages/open-the-box";
 import CreateOpenTheBox from "./pages/open-the-box/createOpenTheBox";
@@ -71,6 +74,7 @@ function App() {
         <Route path="/maze-chase/play/:id" element={<MazeChase />} />
         <Route path="/flip-tiles/play/:id" element={<FlipTiles />} />
         <Route path="/speed-sorting/play/:id" element={<SpeedSorting />} />
+        <Route path="/type-speed/play/:id" element={<TypeSpeed />} />
         <Route path="/anagram/play/:id" element={<PlayAnagram />} />
         <Route path="/hangman/play/:id" element={<HangmanGame />} />
         <Route
@@ -109,6 +113,7 @@ function App() {
           <Route path="/whack-a-mole/edit/:id" element={<EditWhackAMole />} />
           <Route path="/create-maze-chase" element={<CreateMazeChase />} />
           <Route path="/create-anagram" element={<CreateAnagram />} />
+          <Route path="/create-type-speed" element={<CreateTypeSpeed />} />
           <Route path="/quiz/edit/:id" element={<EditQuiz />} />
           <Route path="/flip-tiles/edit/:id" element={<EditFlipTiles />} />
           <Route
@@ -139,6 +144,7 @@ function App() {
             path="/sliding-puzzle/edit/:id"
             element={<EditSlidingPuzzle />}
           />
+          <Route path="/type-speed/edit/:id" element={<EditTypeSpeed />} />
           <Route element={<ProtectedRoute />}>
             {/* ...route lain... */}
             <Route path="/open-the-box/edit/:id" element={<EditOpenTheBox />} />
