@@ -97,8 +97,18 @@ export const findTheMatchService = {
   /**
    * Transform backend game format to frontend Game type
    */
-  transformBackendGame(backendGame: any): Game {
-    // eslint-disable-line @typescript-eslint/no-explicit-any
+  transformBackendGame(backendGame: {
+    id: string;
+    name: string;
+    description: string;
+    thumbnail_image: string | null;
+    is_published: boolean;
+    created_at?: string;
+    creator_id?: string;
+    initial_lives?: number;
+    questions: string[];
+    answers: string[];
+  }): Game {
     // Validate required fields
     if (!backendGame.questions || !Array.isArray(backendGame.questions)) {
       throw new Error("Invalid game format: missing 'questions' array");
@@ -111,7 +121,7 @@ export const findTheMatchService = {
       id: backendGame.id,
       name: backendGame.name,
       description: backendGame.description,
-      thumbnail_image: backendGame.thumbnail_image,
+      thumbnail_image: backendGame.thumbnail_image ?? "",
       is_published: backendGame.is_published,
       created_at: backendGame.created_at || new Date().toISOString(),
       creator_id: backendGame.creator_id || "",
